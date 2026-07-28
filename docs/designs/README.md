@@ -5,12 +5,13 @@ This folder is the **visual source of truth** for the project's UI, and the fron
 ## The pipeline
 
 ```
-brief (markdown)        Claude Design            design canvas            /epic skill
-docs/designs/briefs/ ─▶ generates a high-  ─▶ docs/designs/*.html   ─▶  decomposes the canvas
-proposed/*.brief.md     fidelity UI canvas     (self-contained,          into phased tickets,
-                        vs the design system   the visual truth)         built & verified to match
+bound project           brief (markdown)        Claude Design            design canvas            /epic skill
+Claude Design project ─▶ docs/designs/briefs/ ─▶ generates a high-  ─▶ docs/designs/*.html   ─▶  decomposes the canvas
++ design system          proposed/*.brief.md     fidelity UI canvas     (self-contained,          into phased tickets,
+(DESIGN-SYSTEM.md)                                in the bound project   the visual truth)         built & verified to match
 ```
 
+0. **Bind a project to the design system.** All designs are generated in a **Claude Design project** attached to this repo's **design system**, so they inherit its components by construction. Record the binding once in [`DESIGN-SYSTEM.md`](DESIGN-SYSTEM.md).
 1. **Brief.** Describe the surface, its states, and the intent in `briefs/proposed/<name>.brief.md` (see [`briefs/README.md`](briefs/README.md)). A brief is short — it's a prompt for the design, not a spec.
 2. **Canvas.** Use **Claude Design** to turn the brief into a **high-fidelity, self-contained HTML design canvas** in this folder, rendered against the project's design system (tokens, components, typography). The canvas is what "done" looks like.
 3. **Build to it.** `/epic` (or a normal ticket) implements the canvas. `AGENTS.md`'s design rules require matching it exactly — no colors, spacing, radii, or components outside the token set — and every interactive workflow the canvas shows gets a test (**design fidelity is verified, not assumed**).
@@ -22,9 +23,7 @@ proposed/*.brief.md     fidelity UI canvas     (self-contained,          into ph
 
 ## The design system
 
-<!-- FILL: where your design system lives — tokens, components, typography, foundation CSS —
-     and how to reference it. If it is shared across several projects, point here. The canvases in
-     this folder render against it; implementations must use its tokens, not hardcoded values. -->
+The design system — and the Claude Design project bound to it — is recorded in [`DESIGN-SYSTEM.md`](DESIGN-SYSTEM.md). That binding is what makes generated canvases consistent by construction: they render against the system's components and tokens, and implementations must use those tokens, never hardcoded values. Set it up once per project there.
 
 ## Conventions
 
