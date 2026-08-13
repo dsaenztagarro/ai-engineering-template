@@ -15,7 +15,7 @@ Claude Design project ─▶ docs/designs/briefs/ ─▶ generates a high-  ─�
 1. **Brief.** Describe the surface, its states, and the intent in `briefs/proposed/<name>.brief.md` (see [`briefs/README.md`](briefs/README.md)). A brief is short — it's a prompt for the design, not a spec.
 2. **Canvas.** Use **Claude Design** to turn the brief into a **high-fidelity, self-contained HTML design canvas** in this folder, rendered against the project's design system (tokens, components, typography). The canvas is what "done" looks like.
 3. **Build to it.** `/epic` (or a normal ticket) implements the canvas. `AGENTS.md`'s design rules require matching it exactly — no colors, spacing, radii, or components outside the token set — and every interactive workflow the canvas shows gets a test (**design fidelity is verified, not assumed**).
-4. **Promote.** When the surface ships, move its brief `proposed/ → shipped/`. A design decision worth keeping (a pattern, a contract) becomes an ADR.
+4. **Promote.** When the surface ships, move its brief `proposed/ → shipped/`. A design decision worth keeping (a pattern, a contract) becomes an ADR. The canvas is the **surface** (layout, states); a feature's **behaviour** (rules, invariants, transactions) belongs in its `docs/specs/<feature>.md`, which code cites — not the canvas. Keep business-logic decisions out of the design HTML.
 
 ## What Claude Design is, in this workflow
 

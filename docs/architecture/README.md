@@ -8,6 +8,7 @@ Two kinds of document live here, and the distinction matters:
 ```
 why  -> docs/architecture/decisions/NNNN-*.md   (ADR: the fork and its rationale, immutable)
 how  -> docs/architecture/*.md                  (explainer: the mechanism as it works now, living)
+what -> docs/specs/*.md                          (spec: the behaviour contract, hand-owned, cited by code)
 do X -> docs/guides/*.md                         (how-to)
 ```
 

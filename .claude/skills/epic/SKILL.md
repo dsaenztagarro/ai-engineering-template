@@ -164,6 +164,10 @@ record an ADR:
 If the ticket built or materially changed a non-trivial mechanism, update its how-it-works
 explainer under `docs/architecture/` in the same PR (per `AGENTS.md`).
 
+If the ticket shipped or materially changed a substantial feature, write or update its behaviour
+spec `docs/specs/<feature>.md` in the same PR (per `AGENTS.md`) — and cite it from the code the
+ticket touches in the compact form `(docs/specs/<file>.md — <heading>)`, never a design file.
+
 ### 3.6 Test gate
 The project's **test + lint gate** (as defined in `AGENTS.md`) must pass. Fix failures before going
 further. Where the change has a runtime surface, drive it and confirm the behaviour, not just that
